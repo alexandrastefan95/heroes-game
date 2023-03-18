@@ -1,0 +1,181 @@
+body {
+  background-image: url("custom_resized_c0e03f2b-85c2-47d2-b7cd-573714bdc700.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100hv;
+}
+
+.title {
+  color: #f5d902;
+  text-align: center;
+  font-size: 48px;
+  background-color: rgba(1, 1, 1, 0.85);
+  padding: 20px 0;
+  margin: 0 0 40px;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+
+#show-heroes-btn,
+#start-fight-btn {
+  padding: 20px 50px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#start-fight-btn {
+  display: none;
+}
+
+.heroes-container {
+  display: none;
+  justify-content: space-around;
+}
+
+.hero-container {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+}
+
+.hero-container img {
+  width: 250px;
+  border-radius: 50%;
+}
+
+.hero-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 25px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding-top: 10px;
+}
+
+.hero-avatar {
+  width: 250px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+#show-winner {
+  height: 300px;
+  background-color: rgb(255, 255, 255, 0.8);
+  font-size: 24px;
+  font-weight: 700;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.d-block {
+  display: block !important;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  #show-heroes-btn,
+  #start-fight-btn {
+    font-size: 32px;
+  }
+  .hero-container img {
+    width: 190px;
+  }
+  .hero-name {
+    font-size: 24px;
+    font-weight: 700;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hero-container {
+    margin-bottom: 20px;
+    align-items: center;
+  }
+
+  .hero-container img {
+    width: 190px;
+    height: 160px;
+  }
+
+  .heroes-container {
+    flex-direction: column;
+  }
+
+  body {
+    background-repeat: repeat;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  #show-winner {
+    height: 300px;
+    background-color: rgb(255, 255, 255, 0.8);
+    font-size: 24px;
+    font-weight: 700;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+    padding: 10px;
+  }
+}
+
+/*
+breakpoints mobile max-width: 767px
+breakpoints tablet min-width: 768px and max-width: 1024px
+breakpoints small laptop min-width: 1025px
+
+
+
+punctul (.) il folosim pentru clase
+diezul (#) il folosim pentru id-uri
+diferenta  intre id-uri si clase o reprezinta faptul ca intr-un proiect ID-UL ESTE UNIC (se foloseste pentru un singur element) iar CLASELE le folosim pentru oricat de multe elemente dorim
+de exemplu: daca am 7 div-uri ce trebuie sa aiba acelasi css (aceeasi stilizare) - vezi exemplul cu hero-container, vom folosi o clasa (declarata in fisierul de css) pentru toate elementele ce trebuie sa arate la fel.
+HTML:
+un element poate avea si id si clasa (una sau mai multe)
+<button id='start-btn' clasa='col-red bigger-font btn'>
+CSS:
+.btn - clasa generala pentru butoane (tot css-ul comun)
+.btn {
+    width: 30px;
+    padding: 20px 30px;
+    font-size: 1em;
+}
+.col-red - clasa ce o folosim pentru toate elementele ce dorim sa aiba background rosu
+.col-red {
+    background-color: red;
+}
+.col-green {
+    background-color: green;
+}
+.bigger-font {
+    font-size: 1.5em;
+}
+principiul DRY - DON'T REPEAT YOURSELF
+JS:
+in manipulare DOM este recomandat sa folosim id-ul
+let startBtn = document.getElementById('start-btn');
+-- ne returneaza doar elementul cu id-ul 'start-btn' - pe cand document.getElementsByClassName('btn') ne returneaza o colectie de elemente cu aceeasi clasa.
+*/
